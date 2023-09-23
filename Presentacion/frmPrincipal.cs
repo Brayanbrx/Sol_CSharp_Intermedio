@@ -16,5 +16,16 @@ namespace Presentacion
         {
             InitializeComponent();
         }
+
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            txtCodigo.Text = "";
+            txtDescripcion.Text = "";
+            txtCodigo.Enabled = true;
+            txtDescripcion.Enabled = true;
+            //txtCodigo.Select();
+            txtCodigo.Focus();
+        }
     }
 }
