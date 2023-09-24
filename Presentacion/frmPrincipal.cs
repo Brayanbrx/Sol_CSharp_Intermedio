@@ -17,16 +17,20 @@ namespace Presentacion
             InitializeComponent();
         }
 
+        //Inicio de mis variables
+        int NestadoGuarda = 0;
+
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            NestadoGuarda = 1; //Nuevo Registro
+            lbxListaMantenimiento.Enabled = false;
             txtCodigo.Text = "";
             txtDescripcion.Text = "";
 
             gbMantenimiento.Enabled = true;
-            
+            txtCodigo.Enabled = true;
             txtCodigo.Focus();
-
             gbBotonesPrincipales.Enabled = false;
 
         }
@@ -37,6 +41,7 @@ namespace Presentacion
             txtCodigo.Text = "";
             txtDescripcion.Text = "";
 
+            lbxListaMantenimiento.Enabled = true;
             gbMantenimiento.Enabled = false;
             gbBotonesPrincipales.Enabled = true;
 
@@ -46,12 +51,24 @@ namespace Presentacion
         {
             string Registro;
             Registro = txtCodigo.Text.Trim() + " | " + txtDescripcion.Text.Trim();
-            lbxListaMantenimiento.Items.Add(Registro);
 
+            if (NestadoGuarda == 1) //Nuevo Registro
+            {
+                lbxListaMantenimiento.Items.Add(Registro);
+            }
+            else //Actualizar registro
+            {
+                int ElementoSeleccionado = lbxListaMantenimiento.SelectedIndex;
+
+                lbxListaMantenimiento.Items.Remove(lbxListaMantenimiento.SelectedItem);
+                lbxListaMantenimiento.Items.Insert(ElementoSeleccionado, Registro );
+            }
+            
             MessageBox.Show("Guardado Exitosamente");
 
             gbMantenimiento.Enabled = false;
             gbBotonesPrincipales.Enabled = true;
+            lbxListaMantenimiento.Enabled = true;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -67,8 +84,20 @@ namespace Presentacion
             TextoSeleccionado = lbxListaMantenimiento.SelectedItem.ToString().Trim();
             LongitudTexto = TextoSeleccionado.Length;
             txtCodigo.Text = TextoSeleccionado.Substring(0,3);
-            txtDescripcion.Text = TextoSeleccionado.Substring(6,TextoSeleccionado.Length);
+            txtDescripcion.Text = TextoSeleccionado.Substring(6,LongitudTexto-6);
 
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            NestadoGuarda = 2; //Actualizar Registro
+            gbMantenimiento.Enabled = true;
+            lbxListaMantenimiento.Enabled = false;
+            txtCodigo.Enabled = false;
+
+            txtCodigo.Focus();
+
+            gbBotonesPrincipales.Enabled = false;
         }
     }
 }
