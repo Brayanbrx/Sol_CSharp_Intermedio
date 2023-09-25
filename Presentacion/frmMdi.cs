@@ -58,5 +58,35 @@ namespace Presentacion
         {
             Frm_02 = null;
         }
+
+        private void m_btn01_Click(object sender, EventArgs e)
+        {
+            if (Frm_01 == null)
+            {
+                Frm_01 = new frmPrincipal();
+                Frm_01.MdiParent = this;
+                Frm_01.FormClosed += new FormClosedEventHandler(Alta_frm_01);
+                Frm_01.Show();
+            }
+            else
+            {
+                Frm_01.Activate();
+            }
+        }
+
+        private void m_btn02_Click(object sender, EventArgs e)
+        {
+            if (Frm_02 == null)
+            {
+                Frm_02 = new frmTrackBar();
+                Frm_02.MdiParent = this;
+                Frm_02.FormClosed += new FormClosedEventHandler(Alta_frm_02);
+                Frm_02.Show();
+            }
+            else
+            {
+                Frm_02.Activate();
+            }
+        }
     }
 }

@@ -52,6 +52,7 @@
             this.m_btn01 = new System.Windows.Forms.ToolStripButton();
             this.m_btn02 = new System.Windows.Forms.ToolStripButton();
             this.m_btn03 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.miMenu.SuspendLayout();
             this.miBarra.SuspendLayout();
             this.SuspendLayout();
@@ -203,6 +204,7 @@
             this.miBarra.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_btn01,
             this.m_btn02,
+            this.toolStripSeparator2,
             this.m_btn03});
             this.miBarra.Location = new System.Drawing.Point(0, 24);
             this.miBarra.Name = "miBarra";
@@ -220,6 +222,7 @@
             this.m_btn01.Text = "Mi 1er Form";
             this.m_btn01.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.m_btn01.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.m_btn01.Click += new System.EventHandler(this.m_btn01_Click);
             // 
             // m_btn02
             // 
@@ -231,6 +234,7 @@
             this.m_btn02.Text = "TrackBar";
             this.m_btn02.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.m_btn02.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.m_btn02.Click += new System.EventHandler(this.m_btn02_Click);
             // 
             // m_btn03
             // 
@@ -239,9 +243,14 @@
             this.m_btn03.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.m_btn03.Name = "m_btn03";
             this.m_btn03.Size = new System.Drawing.Size(80, 50);
-            this.m_btn03.Text = "toolStripButton3";
+            this.m_btn03.Text = "Elemento3";
             this.m_btn03.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.m_btn03.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 50);
             // 
             // frmMdi
             // 
@@ -289,5 +298,6 @@
         private System.Windows.Forms.ToolStripButton m_btn01;
         private System.Windows.Forms.ToolStripButton m_btn02;
         private System.Windows.Forms.ToolStripButton m_btn03;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }
