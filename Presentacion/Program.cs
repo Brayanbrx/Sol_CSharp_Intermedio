@@ -20,7 +20,9 @@ namespace Presentacion
             //Application.Run(new frmEncuesta());
             //Application.Run(new frmTrabajandoComboBox());
             //Application.Run(new frmNumericUpDown());
-            Application.Run(new frmTimer());
+            //Application.Run(new frmTimer());
+            //Application.Run(new frmTrackBar());
+            Application.Run(new frmDataGridView());
         }
     }
 }
