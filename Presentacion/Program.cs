@@ -23,7 +23,8 @@ namespace Presentacion
             //Application.Run(new frmTimer());
             //Application.Run(new frmTrackBar());
             //Application.Run(new frmDataGridView());
-            Application.Run(new frmMdi());
+            //Application.Run(new frmMdi());
+            Application.Run(new frmCategorias());
         }
     }
 }
